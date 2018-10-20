@@ -9,6 +9,13 @@ os:
 
 sudo: required
 
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - ~/.esy
+    - test/node_modules
+
 services:
   - docker
 
