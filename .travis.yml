@@ -7,6 +7,8 @@ os:
   - linux
   - osx
 
+sudo: required
+
 env:
   - NODE_ENV=production
 
@@ -20,9 +22,10 @@ cache:
   timeout: 360
   yarn: true
   directories:
-    - node_modules
-    - ~/.esy
-    - test/node_modules
+    - '$HOME/.esy/'
+    - '$HOME/.npm/'
+    - 'node_modules/'
+    - 'test/node_modules/'
 
 install:
   - esy install

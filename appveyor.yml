@@ -2,15 +2,20 @@ platform:
     - x64
     - x86
 
+environment:
+    NODE_ENV: production
+
 cache:
     - C:\Users\appveyor\.esy
     - node_modules
     - test/node_moduels
 
 install:
-    - ps: Install-Product node LTS
+    - ps: Install-Product node 10
     - npm install --global esy@latest
     - esy install
+    # Retry is necessary due to esy/esy#413 and esy/esy#414
+    - appveyor-retry esy install
     - cd tests && yarn install && cd ..
 
 build_script:
