@@ -12,7 +12,6 @@ env:
 
 before_install:
   - npm install --global esy@latest
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export TARGET_NAME=darwin-x64; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then export TARGET_NAME=linux-x64; fi
 
