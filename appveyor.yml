@@ -7,6 +7,7 @@ environment:
 
 cache:
     - C:\Users\appveyor\.esy
+    - C:\Users\appveyor\.npm
     - node_modules
     - test/node_moduels
 

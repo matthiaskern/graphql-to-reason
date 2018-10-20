@@ -7,8 +7,6 @@ os:
   - linux
   - osx
 
-sudo: required
-
 env:
   - NODE_ENV=production
 
