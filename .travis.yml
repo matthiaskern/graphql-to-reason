@@ -12,7 +12,7 @@ env:
 
 before_install:
   - npm install --global esy@latest
-  - bash -e ci/travis_before_install.sh
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export TARGET_NAME=darwin-x64; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then export TARGET_NAME=linux-x64; fi
 
@@ -21,7 +21,6 @@ cache:
   yarn: true
   directories:
     - '$HOME/.esy/'
-    - '$HOME/.npm/'
     - 'node_modules/'
     - 'test/node_modules/'
 
