@@ -22,7 +22,7 @@ services:
 before_install:
   - npm install --global esy@latest
   - esy install
-  - cd tests && yarn install
+  - cd tests && yarn install && cd ..
 
 script:
   - esy build
