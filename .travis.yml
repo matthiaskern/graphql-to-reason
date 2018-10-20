@@ -19,6 +19,6 @@ before_install:
 
 script:
   - esy build
-  - NODE_ENV=production make test
+  - esy test
 #  - mv _build/default/graphql_to_reason.exe graphql_ppx-$TARGET_NAME.exe
 
