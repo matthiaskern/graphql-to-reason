@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "watch":
-      "nodemon -e re -q -w ./lib/ -w ./graphql-to-reason.re --exec 'esy build'"
+      "nodemon -e re -q -w ./lib/ -w ./graphql-to-reason.re --exec 'esy build'",
+    "test":  "make test"
   },
   "esy": {
     "build": "refmterr dune build -p #{self.name}",

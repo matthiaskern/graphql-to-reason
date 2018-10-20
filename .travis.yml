@@ -1,13 +1,24 @@
 language: node_js
+
 node_js:
-- 8
+  - 10
+
 os:
-- linux
-- osx
-install:
-- npm install --global esy@latest
-- esy install
+  - linux
+  - osx
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - npm install --global esy@latest
+  - esy install
+  - cd tests && yarn install
+
 script:
-- esy build
-- esy ./_build/default/bin/bin.exe
-- esy x bin.exe
+  - esy build
+  - NODE_ENV=production make test
+#  - mv _build/default/graphql_to_reason.exe graphql_ppx-$TARGET_NAME.exe
+
