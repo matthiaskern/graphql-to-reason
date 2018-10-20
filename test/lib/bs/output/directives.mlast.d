@@ -1,1 +1,0 @@
-output/directives-GraphqlToReasonTest.cmj :
