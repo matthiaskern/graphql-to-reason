@@ -3,10 +3,6 @@
 set -e
 
 case "$TRAVIS_OS_NAME" in
-    osx)
-        brew update
-        brew install yarn
-        ;;
     linux)
         sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
         echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
