@@ -17,7 +17,7 @@ install:
     - esy install
     # Retry is necessary due to esy/esy#413 and esy/esy#414
     - appveyor-retry esy install
-    - cd tests && yarn install && cd ..
+    - cd test && yarn install && cd ..
 
 build_script:
     - esy build

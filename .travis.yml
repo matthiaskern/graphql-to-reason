@@ -27,7 +27,7 @@ cache:
 
 install:
   - esy install
-  - cd tests && yarn install && cd ..
+  - cd test && yarn install && cd ..
 
 script:
   - esy build
