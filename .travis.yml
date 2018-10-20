@@ -19,9 +19,9 @@ cache:
   timeout: 360
   yarn: true
   directories:
-    - '$HOME/.esy/'
-    - 'node_modules/'
-    - 'test/node_modules/'
+    - "$HOME/.esy/"
+    - node_modules/
+    - test/node_modules/
 
 install:
   - esy install
@@ -30,5 +30,15 @@ install:
 script:
   - esy build
   - esy test
-#  - mv _build/default/graphql_to_reason.exe graphql_ppx-$TARGET_NAME.exe
+  - mv _build/default/graphql_to_reason.exe graphql_ppx-$TARGET_NAME.exe
 
+deploy:
+  provider: releases
+  skip_cleanup: true
+  file_glob: true
+  api_key:
+    secure: cjaJIPmR88ie5s0JHiv1GUxU9J8M0R6BHmzpr3tGS2jjVQlsu6OIJDaF2vmavvuBqxgEBbxqSQC/cUN9rLHEht49lv1xW9bFFn2uO6OO1v06uF+8AqL4kN1wZnmaITV1mkpnGqLaDzjEoBrjAgaCay37/UOm9cScVS/XUgkfgcNKLOOCbOMA+uKLSfRpN5x5YvzETXeqdaPqvocKi8kznFDgS4CX7NFNWdX132nL018MmojwpLMdUyDMDDosnydmrP1dLAQWXdduPPM38hcK9tRvJU1vlRihTKqc9Mg/ONLoGaCG1DE225SgDrSccV4iClaTvgqQEN3twYSQL0N+tHi/1FYiIjnf44PZWTh2hpoDqqytrhXoMZXvFoVt5EDJVFxijXecoweI7bfupB49P/nFqRbLBAP8Ko9jTSxpFVOw4cli51V9HwRIorq8r1oT/woBuHZ9e5VVMQ+a9Dz92EGxHsuO6Iy1CCmIahTYMP9orgg5zeCL0VXZsr1/R4l4DyoPMmPCafMuv2h5lkc4XmuWxybrSG8gzudVZdvb1O5+hw/7WjB8a/F6kW0DtEG65KNvyF4lzuwmBlk5PnFbuWManKxz0b/MoH45IHxIf24Qpy+4xiA66F9skGkrDx7itzvWyzTUGijD7nVSBPYh9qJXDy1TafcDS57x57oKhoY=
+  file: graphql_ppx-*.exe
+  on:
+    tags: true
+    repo: Coobaha/graphql-to-reason
