@@ -44,7 +44,7 @@ deploy:
     repo: Coobaha/graphql-to-reason
 
 
-jobsx:
+jobs:
   include:
     - stage: Wait for Windows binaries to become available
       addons:
